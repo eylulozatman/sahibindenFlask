@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ad Details</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+   
+</head>
+<body id="detailbody">
+    <div class="detailContainer">
+        <div class="detailImage">
+            <p>{{ advert.description }}</p>
+            <img src="{{ advert.image }}" alt="Advert Image">
+        </div>
+        <div class="attributes">
+            <p>Details</p>
+            <p> &#10022; Description: {{ advert.description }}</p>
+            <p> &#10022; Ad no : {{ advert.id }}</p>
+            <p> &#10022; Price: {{ advert.price }} K $</p>
+            <p> &#10022; City: {{advert.city}}</p>
+        </div>
+    </div>
+</body>
+</html>

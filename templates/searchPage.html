@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function redirectToDetails(advertId) {
+            window.location.href = "/details?advertId=" + advertId;
+        }
+    </script>
+
+<script>
+    function redirectByCategory(category) {
+        window.location.href = '/byCategory?category=' + category;
+    }
+</script>
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="sahibindenlogo">
+            <img src="https://s0.shbdn.com/assets/images/sahibinden_logo_v13012023:a4a65c5ace0e80eac6171317531b4611.png" alt="logo">
+        </div>
+        <div class="search-bar">
+            <form action="/search" method="GET">
+                <input type="text" name="query" placeholder="type...">
+                <button type="submit" id="araBtn">Serach</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+      
+        <div class="categoryTable">
+            <p id="ctgspan">CATEGORIES</p>
+            {% for category, count in categories.items() %}
+                <div class="cc" onclick="redirectByCategory('{{ category }}')">&#9734; {{ category }} ({{ count }})</div>
+            {% endfor %}
+        </div>
+        <div class="advpanel">
+            {% for advert in adverts %}
+                <div class="advDiv" onclick="redirectToDetails('{{ advert.id }}')">
+                    <div class="advImage">
+                        <img src="{{ advert.image }}" alt="Advert Image">
+                    </div>
+                    <div class="advDescription">
+                        <p> {{ advert.description }} </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+     
+</body>
+</html>
