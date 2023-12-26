@@ -14,6 +14,10 @@
     function redirectByCategory(category) {
         window.location.href = '/byCategory?category=' + category;
     }
+
+    function redirectToHomepage(){
+        window.location.href = "/";
+    }
 </script>
 
 </head>
@@ -22,11 +26,16 @@
         <div class="sahibindenlogo">
             <img src="https://s0.shbdn.com/assets/images/sahibinden_logo_v13012023:a4a65c5ace0e80eac6171317531b4611.png" alt="logo">
         </div>
+      
         <div class="search-bar">
             <form action="/search" method="GET">
-                <input type="text" name="query" placeholder="type...">
+                <input type="text" name="query" placeholder="ara...">
                 <button type="submit" id="araBtn">Serach</button>
             </form>
+        </div>
+
+        <div class="returnhome">
+            <button id="returnhomebtn" onclick="redirectToHomepage()" >Homepage</button>
         </div>
     </div>
     <div class="container">

@@ -6,7 +6,7 @@ from flask_migrate import Migrate, migrate
 from models import db, Category , Advert
  
 app = Flask(__name__)
-app.debug = True
+app.debug = False
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///advertapp.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

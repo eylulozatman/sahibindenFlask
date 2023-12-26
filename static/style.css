@@ -7,37 +7,55 @@ html, body {
     overflow-y: hidden;
 }
   
-.navbar{
-
+/* .navbar ve içerikleri */
+.navbar {
     width: 100%;
-    height: 8vw;
-    background-color: rgb(44, 42, 42);
+    height: auto; /* Sabit yükseklik yerine otomatik yükseklik */
+    min-height: 6vw; /* Min. yükseklik belirleme */
+    background-color: rgb(27, 27, 66);
     display: flex;
-    justify-content: space-between;
-    align-items: center
+    align-items: center;
+    padding: 0 20px; /* Kenar boşluğu ekleme */
+    box-sizing: border-box; /* Padding hesaplaması */
 }
-.sahibindenlogo img{
 
-   margin-left: 50px;
-    width: 23vw;
-    height: 6vw;
+.sahibindenlogo img {
+    width: 100%; 
+    max-width: 16vw;
+    height: auto; 
+    margin-left: 0; 
 }
 
 .search-bar {
-   margin-top: 10px;
-   margin-right: 50px;
-   width: max-content;
-   height: max-content;   
+    margin-left: 3vh;
+    margin-top: 10px;
+    width: 100%; /* Genişlik %100 */
+    max-width: 300px; /* Maksimum genişlik belirleme */
+    display: flex; /* Öğeleri yan yana yerleştirme */
+    align-items: center; /* Dikey hizalama */
 }
 
 input[type="text"] {
+    flex: 1; /* Esneklik ekleyerek genişliği ayarlama */
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
     margin-right: 5px;
 }
 
+#returnhomebtn {
+    margin-left: auto;
+    margin-top: 1vh;
+    width: max-content; 
+    padding: 8px 16px; 
+    border-radius: 3px;
+    background-color: rgb(17, 20, 50);
+    color: white;
+    font-weight: bold;
+}
+
 #araBtn {
+   
     padding: 8px 16px;
     background-color: #007bff;
     color: white;
@@ -45,6 +63,7 @@ input[type="text"] {
     border-radius: 4px;
     cursor: pointer;
 }
+
 
 .container{
 
@@ -58,13 +77,15 @@ input[type="text"] {
     flex: 0 0 20%; 
     color: rgb(34, 32, 32);
     font-family: 'Lucida Sans', 'Lucida Sans Regular';
-    background-color: palegoldenrod;
+    background-color: white
 }
 
 #ctgspan{
-  
+   
+
     margin-top: 50px;
     border-bottom: 1px solid burlywood;
+   
     
 }
 
@@ -79,7 +100,7 @@ input[type="text"] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: gainsboro;
+    background-color: white;
     overflow-y: auto;
     height: 85vh;
     border: 1px solid #ccc;
@@ -91,8 +112,8 @@ input[type="text"] {
     max-height: 300px;
     margin-left: 10px;
     margin-top: 10px;
-    border: 4px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #090927;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -124,37 +145,42 @@ input[type="text"] {
     max-height: max-content;
    justify-content: center;
    
-   
-    
 }
 
 
 
 .detailContainer {
-    padding-left: 50px;
-    padding-right: 50px;
+    margin-top: 2vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: palegoldenrod;
-    height: 100vh; 
+    justify-content: center;
+    background-color: white;
+    height: 60vh; 
 }
 
 .detailImage {
   
-    flex: 0 0 60%;  
-    font-weight: bold;
+    flex: 0 0 40%;  
     color: #091828; 
 
-  
+}
+
+.detailImage p{
+
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: #090927 1px solid;
+
 }
 .detailImage img {
     
     width: 100%;
     height: max-content;
-    border: 25px solid rgb(218, 210, 128);
+    border: 2px solid gray;
     box-sizing: border-box;
     border-radius: 10px;
+    
 }
 
 .attributes {
@@ -166,7 +192,7 @@ input[type="text"] {
     padding: 20px;
     margin-top: 50px;
     color: rgb(26, 25, 25);
-    background-color: rgb(218, 210, 128);
+    background-color: white;
     border-radius: 10px;
     font-weight: bold;
     font-size: 20px;
@@ -176,13 +202,13 @@ input[type="text"] {
 
 .attributes p{
 
-    border-bottom: 2px solid rgb(79, 79, 102);
+    border-bottom: 1px solid rgb(79, 79, 102);
     border-radius: 5px;
 }
 
 @media screen and (max-width: 800px) { /* Örnek olarak 768px genişlikteki cihazları hedef alabilirsiniz */
     .detailContainer {
-        flex-direction: column; /* Mobil cihazlarda sütun olarak düzenle */
+        flex-direction: column; 
        
     }
 
@@ -190,6 +216,16 @@ input[type="text"] {
 
         max-height: 25vh;
         max-width: 300px;
+    }
+
+    .navbar{
+        max-width: 100vw;
+    }
+    .detailContainer{
+
+        max-height: 25vh;
+        max-width: 300px;
+
     }
     
 }
