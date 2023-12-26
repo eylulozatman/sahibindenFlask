@@ -176,6 +176,6 @@ def favicon():
 
 if __name__ == '__main__':
     
-    app.run(debug=True, port=8484)
+    app.run()
 
   
